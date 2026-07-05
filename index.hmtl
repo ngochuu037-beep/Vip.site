@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký Free Fire - Chiến & Sinh tồn</title>
+    <style>
+        /* Toàn bộ chú thích bằng tiếng Việt */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0b1a2e;
+            color: #e0e0e0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: #1a2a3f;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.7);
+            border: 1px solid #2a4a6a;
+        }
+        h1 {
+            text-align: center;
+            color: #ffcc00;
+            text-shadow: 0 0 10px #ff8800;
+            font-size: 2.4rem;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+        .vips-brand {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff66aa;
+            text-shadow: 0 0 20px #ff0066;
+            margin-bottom: 25px;
+            border-bottom: 2px dashed #ff66aa;
+            padding-bottom: 10px;
+        }
+        .vips-brand span { background: #0b1a2e; padding: 0 20px; }
+        .two-col {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .section {
+            flex: 1 1 400px;
+            background: #0f1f30;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 6px solid #ffaa00;
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+        }
+        .section.sinh-ton { border-left-color: #00cc88; }
+        .section h2 {
+            color: #ffaa00;
+            margin-bottom: 16px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section.sinh-ton h2 { color: #00cc88; }
+        .form-group {
+            margin-bottom: 14px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #b0c4de;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid #2a4a6a;
+            background: #0a1520;
+            color: #fff;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #ffaa00;
+            box-shadow: 0 0 10px #ffaa0055;
+        }
+        .btn {
+            padding: 10px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            margin: 5px 5px 5px 0;
+        }
+        .btn-primary {
+            background: #ffaa00;
+            color: #0b1a2e;
+        }
+        .btn-primary:hover { background: #ffbb22; transform: scale(1.02); }
+        .btn-success {
+            background: #00cc88;
+            color: #0b1a2e;
+        }
+        .btn-success:hover { background: #22ee99; transform: scale(1.02); }
+        .btn-danger {
+            background: #cc3344;
+            color: #fff;
+        }
+        .btn-danger:hover { background: #ee5566; }
+        .btn-secondary {
+            background: #3a5a7a;
+            color: #fff;
+        }
+        .btn-secondary:hover { background: #4a7a9a; }
+        .list-box {
+            margin-top: 18px;
+            background: #09121c;
+            padding: 12px;
+            border-radius: 8px;
+            max-height: 260px;
+            overflow-y: auto;
+            border: 1px solid #2a4a6a;
+        }
+        .list-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        .list-box li {
+            padding: 6px 10px;
+            border-bottom: 1px solid #1a2a3a;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+        }
+        .list-box li:last-child { border-bottom: none; }
+        .team-output {
+            margin-top: 15px;
+            background: #0a1a2a;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #3a6a8a;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            max-height: 300px;
+            overflow-y: auto;
+            color: #aaddff;
+        }
+        .badge {
+            background: #ffaa00;
+            color: #0b1a2e;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .badge-sinh { background: #00cc88; }
+        .flex-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .counter {
+            font-size: 0.9rem;
+            color: #8899bb;
+        }
+        .footer-note {
+            margin-top: 30px;
+            text-align: center;
+            color: #667788;
+            font-style: italic;
+            border-top: 1px solid #2a3a4a;
+            padding-top: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>⚔️ ĐĂNG KÝ FREE FIRE ⚔️</h1>
+    <div class="vips-brand"><span>✦ ngochuuVips1 ✦</span></div>
+
+    <div class="two-col">
+        <!-- PHẦN CHIẾN -->
+        <div class="section" id="sectionChien">
+            <h2>🔥 CHIẾN</h2>
+            <div class="form-group">
+                <label>ID người tham gia</label>
+                <input type="text" id="idChien" placeholder="VD: 123456789" />
+            </div>
+            <div class="form-group">
+                <label>Tên game</label>
+                <input type="text" id="tenGameChien" placeholder="Tên nhân vật Free Fire" />
+            </div>
+            <div class="form-group">
+                <label>Tên Facebook</label>
+                <input type="text" id="fbChien" placeholder="Link hoặc tên FB" />
+            </div>
+            <div class="flex-row">
+                <button class="btn btn-primary" onclick="dangKy('chien')">➕ Đăng ký</button>
+                <button class="btn btn-success" onclick="xaoTronTeam('chien')">🎲 Sắp xếp team ngẫu nhiên</button>
+                <button class="btn btn-danger" onclick="xoaDanhSach('chien')">🗑️ Xóa DS</button>
+            </div>
+            <div class="counter">Đã đăng ký: <span id="countChien">0</span></div>
+            <div class="list-box" id="listChien">
+                <ul id="ulChien"></ul>
+            </div>
+            <div class="team-output" id="teamChien">[Team sẽ hiện ở đây]</div>
+        </div>
+
+        <!-- PHẦN SINH TỒN -->
+        <div class="section sinh-ton" id="sectionSinhTon">
+            <h2>🌿 SINH TỒN</h2>
+            <div class="form-group">
+                <label>ID người tham gia</label>
+                <input type="text" id="idSinh" placeholder="VD: 987654321" />
+            </div>
+            <div class="form-group">
+                <label>Tên game</label>
+                <input type="text" id="tenGameSinh" placeholder="Tên nhân vật Free Fire" />
+            </div>
+            <div class="form-group">
+                <label>Tên Facebook</label>
+                <input type="text" id="fbSinh" placeholder="Link hoặc tên FB" />
+            </div>
+            <div class="flex-row">
+                <button class="btn btn-primary" onclick="dangKy('sinhTon')">➕ Đăng ký</button>
+                <button class="btn btn-success" onclick="xaoTronTeam('sinhTon')">🎲 Sắp xếp team ngẫu nhiên</button>
+                <button class="btn btn-danger" onclick="xoaDanhSach('sinhTon')">🗑️ Xóa DS</button>
+            </div>
+            <div class="counter">Đã đăng ký: <span id="countSinh">0</span></div>
+            <div class="list-box" id="listSinh">
+                <ul id="ulSinh"></ul>
+            </div>
+            <div class="team-output" id="teamSinh">[Team sẽ hiện ở đây]</div>
+        </div>
+    </div>
+    <div class="footer-note">ngochuuVips1 · Mọi thao tác đều lưu trong bộ nhớ trình duyệt</div>
+</div>
+
+<script>
+// ==================== DỮ LIỆU ====================
+// Mỗi phần tử lưu mảng các đối tượng {id, tenGame, fb}
+const data = {
+    chien: [],
+    sinhTon: []
+};
+
+// ==================== HÀM HIỂN THỊ ====================
+function renderList(type) {
+    const ul = document.getElementById(type === 'chien' ? 'ulChien' : 'ulSinh');
+    const countSpan = document.getElementById(type === 'chien' ? 'countChien' : 'countSinh');
+    const list = data[type];
+    ul.innerHTML = '';
+    list.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `<span><strong>${index+1}.</strong> ID: ${item.id} | Game: ${item.tenGame}</span><span>FB: ${item.fb}</span>`;
+        ul.appendChild(li);
+    });
+    countSpan.textContent = list.length;
+}
+
+function renderTeam(type) {
+    const container = document.getElementById(type === 'chien' ? 'teamChien' : 'teamSinh');
+    const list = data[type];
+    if (list.length === 0) {
+        container.textContent = '[Chưa có người đăng ký]';
+        return;
+    }
+    // Chia team ngẫu nhiên đã được xáo trộn trước đó, nhưng ở đây ta dùng lại kết quả xáo trộn mới nhất.
+    // Nếu chưa xáo trộn, ta hiển thị danh sách gốc theo thứ tự.
+    // Để đơn giản, ta tạo một bản sao và xáo trộn mỗi khi gọi hiển thị? 
+    // Nhưng yêu cầu là "sắp xếp team ngẫu nhiên" – ta có nút riêng, nút đó sẽ gọi hàm xaoTronTeam và lưu kết quả vào một biến tạm.
+    // Ta dùng một biến lưu team đã xáo trộn cuối cùng cho mỗi loại.
+    if (!window._teamCache) window._teamCache = {};
+    const cacheKey = type;
+    if (window._teamCache[cacheKey]) {
+        container.textContent = window._teamCache[cacheKey];
+    } else {
+        // Nếu chưa có cache, hiển thị danh sách hiện tại dạng cột
+        let text = 'Danh sách hiện tại (chưa xáo trộn team):\n';
+        list.forEach((p, i) => {
+            text += `${i+1}. ID:${p.id} | ${p.tenGame} | FB:${p.fb}\n`;
+        });
+        container.textContent = text;
+    }
+}
+
+// Hàm cập nhật toàn bộ giao diện cho một loại
+function updateUI(type) {
+    renderList(type);
+    renderTeam(type);
+}
+
+// ==================== ĐĂNG KÝ ====================
+function dangKy(type) {
+    const prefix = type === 'chien' ? 'Chien' : 'Sinh';
+    const idInput = document.getElementById('id' + prefix);
+    const tenInput = document.getElementById('tenGame' + prefix);
+    const fbInput = document.getElementById('fb' + prefix);
+    const idVal = idInput.value.trim();
+    const tenVal = tenInput.value.trim();
+    const fbVal = fbInput.value.trim();
+    if (!idVal || !tenVal || !fbVal) {
+        alert('Vui lòng điền đầy đủ ID, tên game và tên FB.');
+        return;
+    }
+    // Thêm vào mảng
+    data[type].push({ id: idVal, tenGame: tenVal, fb: fbVal });
+    // Xóa cache team cũ vì danh sách thay đổi
+    if (window._teamCache) delete window._teamCache[type];
+    // Xóa input
+    idInput.value = '';
+    tenInput.value = '';
+    fbInput.value = '';
+    updateUI(type);
+}
+
+// ==================== XÓA DANH SÁCH ====================
+function xoaDanhSach(type) {
+    if (!confirm(`Xóa toàn bộ danh sách ${type === 'chien' ? 'CHIẾN' : 'SINH TỒN'}?`)) return;
+    data[type] = [];
+    if (window._teamCache) delete window._teamCache[type];
+    updateUI(type);
+}
+
+// ==================== XÁO TRỘN TEAM NGẪU NHIÊN ====================
+function xaoTronTeam(type) {
+    const list = data[type];
+    if (list.length === 0) {
+        alert('Chưa có người đăng ký để xáo trộn.');
+        return;
+    }
+    // Tạo bản sao và xáo trộn Fisher–Yates
+    const shuffled = [...list];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    // Chia thành team, mỗi team tối đa 4 người (có thể điều chỉnh)
+    const teamSize = 4;
+    let output = '';
+    let teamIndex = 1;
+    for (let i = 0; i < shuffled.length; i += teamSize) {
+        const team = shuffled.slice(i, i + teamSize);
+        output += `=== TEAM ${teamIndex} ===\n`;
+        team.forEach((p, idx) => {
+            output += `  ${idx+1}. ID:${p.id} | ${p.tenGame} | FB:${p.fb}\n`;
+        });
+        output += '\n';
+        teamIndex++;
+    }
+    // Lưu vào cache
+    if (!window._teamCache) window._teamCache = {};
+    window._teamCache[type] = output;
+    // Cập nhật hiển thị team
+    renderTeam(type);
+    // Đồng thời cập nhật danh sách (vẫn giữ nguyên thứ tự đăng ký gốc)
+    renderList(type);
+}
+
+// ==================== KHỞI TẠO ====================
+// Thêm dữ liệu mẫu để demo (tùy chọn)
+(function initDemo() {
+    // Thêm vài mẫu cho cả hai để thấy ngay
+    data.chien.push({ id: '1001', tenGame: 'SátThủ', fb: 'fb.com/satthu' });
+    data.chien.push({ id: '1002', tenGame: 'BossHuyền', fb: 'boss.huyen' });
+    data.chien.push({ id: '1003', tenGame: 'TiaChớp', fb: 'tia.chop' });
+    data.chien.push({ id: '1004', tenGame: 'BãoĐen', fb: 'bao.den' });
+    data.chien.push({ id: '1005', tenGame: 'RồngLửa', fb: 'rong.lua' });
+
+    data.sinhTon.push({ id: '2001', tenGame: 'SóiCôĐơn', fb: 'soi.codon' });
+    data.sinhTon.push({ id: '2002', tenGame: 'BóngĐêm', fb: 'bong.dem' });
+    data.sinhTon.push({ id: '2003', tenGame: 'CâyGậy', fb: 'cay.gay' });
+    data.sinhTon.push({ id: '2004', tenGame: 'NúiLửa', fb: 'nui.lua' });
+
+    updateUI('chien');
+    updateUI('sinhTon');
+})();
+</script>
+</body>
+</html>
